@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        #pic-holder {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            overflow: scroll;
+        }
+        .item {
+            display: flex;
+            margin: 2px;
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            width: 200px;
+        }
+
+        .item-img {
+        width: 45px;
+        min-width: 45px;
+        }
+
+        .item-txt {
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form action="/api/upload" enctype="multipart/form-data" method="post">
+        <input type="file" name="pic" accept="image/jpg">
+        <input type="submit">
+    </form>
+    <button id="refresh-btn">Refresh</button>
+    <div id="pic-holder"></div>
+    <script defer src="index.dart.js"></script>
+</body>
+</html>

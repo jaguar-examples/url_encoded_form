@@ -1,0 +1,11 @@
+name: jaguar_example_url_encoded_form
+version: 2.1.1
+description: Example that shows how to parse url-encoded-form in Jaguar
+author: Ravi Teja Gudapati <tejainece@gmail.com>
+homepage: https://github.com/jaguar-examples/upload_file
+
+environment:
+  sdk: ">=2.0.0-dev.60.0 <3.0.0"
+
+dependencies:
+  jaguar: ^2.1.24
