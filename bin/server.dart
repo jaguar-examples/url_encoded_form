@@ -13,7 +13,7 @@ main(List<String> args) async {
     return Redirect(Uri.parse("/result/$a/$b"));
   });
 
-  server.get(
+  server.html(
       '/',
       (ctx) => '''
 <html>
@@ -32,9 +32,9 @@ main(List<String> args) async {
   </body>
 </html>  
   ''',
-      mimeType: MimeType.html);
+      responseProcessor: htmlResponseProcessor);
 
-  server.get(
+  server.html(
       '/result/:a/:b',
       (ctx) => '''
 <html>
@@ -46,10 +46,9 @@ main(List<String> args) async {
     Result is <strong>${ctx.pathParams.getInt('a', 0) + ctx.pathParams.getInt('b', 0)}</strong>
   </body>
 </html> 
-  ''',
-      mimeType: MimeType.html);
+  ''');
 
-  server.get(
+  server.html(
       '/error',
       (ctx) => '''
 <html>
@@ -61,8 +60,7 @@ main(List<String> args) async {
     There was an error!
   </body>
 </html> 
-  ''',
-      mimeType: MimeType.html);
+  ''');
 
   server.log.onRecord.listen(print);
   await server.serve(logRequests: true);

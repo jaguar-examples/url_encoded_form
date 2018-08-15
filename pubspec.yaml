@@ -5,7 +5,10 @@ author: Ravi Teja Gudapati <tejainece@gmail.com>
 homepage: https://github.com/jaguar-examples/upload_file
 
 environment:
-  sdk: ">=2.0.0-dev.60.0 <3.0.0"
+  sdk: ">=2.0.0 <3.0.0"
 
 dependencies:
-  jaguar: ^2.1.24
+  jaguar: ^2.2.6
+  http:
+  stencil:
+  jaguar_client:
